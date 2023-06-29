@@ -1,0 +1,74 @@
+// wirte a cpp program to swap the vale of private data member from 2 diffrent classes
+#include<iostream.h>
+#include<conio.h>
+class two;
+class one
+{
+	int a;
+	public:
+	one(int x)
+	{
+		a=x;
+	}
+
+	void disp()
+	{
+		cout<<a;
+	}
+
+	friend void swap(one &,two &);
+};
+
+class two
+{
+	int b;
+	public:
+	two(int y)
+	{
+		b=y;
+	}
+
+	void disp()
+	{
+		cout<<b;
+	}
+
+	friend void swap(one &,two &)
+};
+
+void swap(one &o1,two &o2)
+{
+	int temp=0;
+	temp=o1.a;
+	o1.a=o2.b;
+	o2.b=temp;
+
+	cout<<"\n1:"<<o1.a;
+	cout<<"\n2:"<<o2.b;
+}
+
+void main()
+{
+	int a,b;
+	clrscr();
+	cout<<"enter the number 1:";
+	cin>>a;
+	one o1(a);
+
+	cout<<"enter the number 2:";
+	cin>>b;
+	two o2(b);
+
+	cout<<"before swapping:";
+	cout<<"\n1 :";o1.disp();
+	cout<<"\n2 :";o2.disp();
+
+	cout<<"\n after swapping :";
+	swap(o1,o2);
+
+	cout<<"\n after swapping:";
+	cout<<"\n1:";o1.disp();
+	cout<<"\n2:";o2.disp();
+	getch();
+}                                                            x
+xxx

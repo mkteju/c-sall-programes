@@ -1,0 +1,54 @@
+
+// w a p to demostrate the use of default argumentes use of function overloding //
+#include<iostream.h>
+#include<conio.h>
+class add
+{
+	int a,b,c;
+	public:
+	void get(int x,int y=5)
+	{a=x;b=y;}
+	void get(){a=20;b=10;}
+	void sum();
+	void disp();
+};
+
+void add::sum()
+{
+	c=a+b;
+}
+
+void add::disp()
+{
+	cout<<c;
+}
+
+void main()
+{
+	add  obj;
+	clrscr();
+	int a,b;
+	cout<<"enter the 1 number :";
+	cin>>a;
+	cout<<"enter the 2 nd number:";
+	cin>>b;
+	obj.get(a,b);
+	obj.sum();
+	cout<<a<<"+"<<b<<"=";
+	obj.disp();
+
+	obj.get(a);
+	obj.sum();
+	cout<<endl<<a<<"+5";
+	obj.disp();
+
+	obj.get();
+	obj.sum();
+	cout<<endl<<"20+10";
+	obj.disp();
+	getch();
+}
+
+
+
+

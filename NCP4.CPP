@@ -1,0 +1,65 @@
+#include<iostream.h>
+#include<conio.h>
+
+class student
+{
+	int roll;
+	char name[10];
+	float mark[5],sum;
+
+	public:
+	void get(void );
+	void total(void);
+	void disp(void);
+};
+
+void student::get(void)
+{
+	int i;
+	cout<<"name:";
+	cin>>name;
+
+	cout<<"roll:";
+	cin>>roll;
+
+for(i=1;i<=5;i++)
+	{
+		cout<<i<<"subject marks:";
+		cin>>mark[i];
+	}
+}
+
+void student::disp(void)
+{
+	int i;
+	cout<<"\n student name :"<<name;
+	cout<<"\n student roll no:"<<roll;
+	for(i=1;i<=5;i++)
+	{
+		cout<<"\n"<<i<<"subject marks :"<<mark[i];
+	}
+}
+
+void student::total(void)
+{
+	int i,sum=0;
+	for(i=1;i<=5;i++)
+	{
+	sum=sum+mark[i];
+	}
+	cout<<"\n total marks :"<<sum;
+}
+
+void main()
+{
+	clrscr();
+	student s1;
+	s1.get();
+	s1.disp();
+	s1.total();
+	getch();
+}
+
+
+
+
